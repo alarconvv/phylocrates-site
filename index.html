@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhyloCrates: hypothesis refinement for phylogenetic comparative biology</title>
+<meta name="description" content="PhyloCrates is a Socratic hypothesis-refinement agent for phylogenetic comparative biology. Eight stages from observation to a bounded, critically examined hypothesis set, then it stops.">
+<link rel="icon" type="image/svg+xml" href="assets/owl-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="#top">
+      <span>PhyloCrates</span>
+    </a>
+    <div class="masthead-tags">
+      <span class="tag tag--neutral">Prototype v0.6</span>
+      <a class="tag tag--icon" href="https://github.com/alarconvv/phylocrates-plugin.git" title="GitHub repository (link coming soon)" aria-label="GitHub repository, link coming soon">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        <span>GitHub</span>
+      </a>
+      <span class="tag tag--neutral tag--wide">Viviana Romero Alarcón</span>
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav" aria-label="Site">
+  <ul>
+    <li><a href="index.html" aria-current="page">Overview</a></li>
+    <li><a href="example.html">Example</a></li>
+    <li><a href="docs.html">Docs &amp; install</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <p class="thesis">A Socratic agent that turns a biological observation into a critically examined hypothesis.</p>
+    <img class="hero-mark" src="assets/PhylogratesLogo.svg" alt="PhyloCrates mark: a thinking figure with an idea">
+  </section>
+
+  <section class="section" aria-labelledby="what-heading">
+    <div class="section-inner section-inner--prose">
+      <h2 id="what-heading">What it does</h2>
+      <p>PhyloCrates is a standalone conversational agent for hypothesis formation, criticism, and refinement in phylogenetic comparative biology. It takes a researcher from an initial biological observation, intuition, or uncertainty through eight stages of reasoning: sharpening the scientific question, exposing hidden assumptions, generating and challenging competing explanations, deriving biological predictions, and bounding the claim. It ends in a structured <strong>Hypothesis Reasoning Record</strong>.</p>
+      <p class="protocol-chain">Observation/Problem → Question → Assumptions → Alternatives → Predictions → Discriminating expectations → Scope of claim → Refined hypothesis set</p>
+      <p>It asks one question: <em>what exactly are you claiming, what else could explain it, what should be true if each explanation is correct, and what would conceptually distinguish them?</em> It stops once that reasoning is explicit and coherent, before anyone picks a method.</p>
+    </div>
+  </section>
+
+  <section class="section section--stages" aria-labelledby="stages-heading">
+    <div class="section-inner">
+      <h2 id="stages-heading">The eight stages</h2>
+      <ol class="stage-list">
+        <li>
+          <div class="stage-list-num">01</div>
+          <div>
+            <h3>Observation / Problem</h3>
+            <p>Identify the biological observation, uncertainty, contradiction, or explanatory gap.</p>
+            <p class="stage-output">Output: a method-agnostic problem statement.</p>
+          </div>
+        </li>
+        <li>
+          <div class="stage-list-num">02</div>
+          <div>
+            <h3>Question</h3>
+            <p>Convert the problem into a precise scientific question.</p>
+            <p class="stage-output">Output: one primary question; secondary questions separated when necessary.</p>
+          </div>
+        </li>
+        <li>
+          <div class="stage-list-num">03</div>
+          <div>
+            <h3>Assumptions</h3>
+            <p>Expose assumptions built into the wording of the question or the favored explanation.</p>
+            <p class="stage-output">Output: an explicit assumption set, each marked accepted, provisional, or challenged.</p>
+          </div>
+        </li>
+        <li>
+          <div class="stage-list-num">04</div>
+          <div>
+            <h3>Alternatives</h3>
+            <p>Build a serious set of competing explanations: adaptive, non-adaptive, historical, common-cause, reverse-direction, artifact, contingency, trait-independent. Reasoning order: elicit → challenge → supplement → synthesize.</p>
+            <p class="stage-output">Output: a focal hypothesis plus plausible alternatives.</p>
+          </div>
+        </li>
+        <li>
+          <div class="stage-list-num">05</div>
+          <div>
+            <h3>Predictions</h3>
+            <p>Derive biological expectations under each major hypothesis, not statistical outcomes.</p>
+            <p class="stage-output">Output: one or more predictions per hypothesis.</p>
+          </div>
+        </li>
+        <li>
+          <div class="stage-list-num">06</div>
+          <div>
+            <h3>Discriminating expectations</h3>
+            <p>Identify the conceptual evidence that would favor one explanation over another. Does not specify sampling, operational measurement, or analysis.</p>
+            <p class="stage-output">Output: pairwise or grouped discrimination statements.</p>
+          </div>
+        </li>
+        <li>
+          <div class="stage-list-num">07</div>
+          <div>
+            <h3>Scope of claim</h3>
+            <p>Define exactly how far the hypothesis reaches.</p>
+            <p class="stage-output">Output: biological level, temporal scope, taxonomic/geographic scope, claim type, and explicit non-claims.</p>
+          </div>
+        </li>
+        <li>
+          <div class="stage-list-num">08</div>
+          <div>
+            <h3>Refined hypothesis set</h3>
+            <p>Synthesize the reasoning into a coherent final structure: problem, question, focal hypothesis, alternatives, assumptions, predictions, discriminating expectations, scope, unresolved ambiguities, decision rationale, and record status.</p>
+            <p class="stage-output">Output: the Hypothesis Reasoning Record. A method recommendation is never part of it.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--boundary" aria-labelledby="boundary-heading">
+    <div class="section-inner">
+      <h2 id="boundary-heading">The scope boundary</h2>
+      <p class="boundary-intro">PhyloCrates deliberately stops at hypothesis refinement. It does not choose a phylogenetic comparative method, design the study, specify sampling, define operational measurements, calculate power, or build an analysis pipeline. Asked for those, it states the limit in one clause and continues with whatever hypothesis-relevant reasoning remains.</p>
+      <div class="boundary-grid">
+        <div class="boundary-block boundary-block--in">
+          <span class="tag tag--turquoise">In scope</span>
+          <ul>
+            <li>Clarify the motivating biological observation or uncertainty</li>
+            <li>Refine the scientific question</li>
+            <li>Surface hidden biological and causal assumptions</li>
+            <li>Generate and challenge alternative explanations</li>
+            <li>Formulate predictions for competing explanations</li>
+            <li>Identify what would conceptually distinguish alternatives</li>
+            <li>Clarify biological level, temporal, and taxonomic scope</li>
+            <li>Distinguish association, temporal ordering, mechanism, causation</li>
+            <li>Identify conceptual confounding as an alternative explanation</li>
+            <li>Record unresolved ambiguity and decision rationale</li>
+            <li>Produce the Hypothesis Reasoning Record</li>
+          </ul>
+        </div>
+        <div class="boundary-block boundary-block--out">
+          <span class="tag tag--amber">Out of scope</span>
+          <ul>
+            <li>Recommending PIC, PGLS, PGLMM, BM, OU, Mk, ASR, BiSSE, HiSSE, BAMM, or any other named method</li>
+            <li>Selecting a comparative-method family</li>
+            <li>Specifying sample size, taxon sampling, power, or data-collection protocol</li>
+            <li>Deciding how variables must be measured operationally</li>
+            <li>Specifying tree or branch-length requirements, priors, diagnostics, sensitivity analyses</li>
+            <li>Building an analysis pipeline or comparative study design</li>
+            <li>Answering "what method should I use?" beyond recovering the biological hypothesis</li>
+          </ul>
+        </div>
+      </div>
+      <p class="boundary-footer">The boundary does not relax for urgency, insistence, seniority claims, or rephrasing. Before presenting a record, its own content is checked against these exclusions, including free-text rationale, where a method recommendation could otherwise slip through.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="record-heading">
+    <div class="section-inner section-inner--prose">
+      <h2 id="record-heading">The Hypothesis Reasoning Record</h2>
+      <p>Every session ends in the same artifact: a structured record of what was decided, and why. It preserves:</p>
+      <ul class="record-list">
+        <li>accepted decisions</li>
+        <li>provisional decisions</li>
+        <li>rejected explanations</li>
+        <li>superseded wording</li>
+        <li>unresolved ambiguity</li>
+        <li>rationale provenance: user, source-grounded principle, or working assumption</li>
+      </ul>
+      <p>No study-design field belongs in it: no method, no PCM family, no sample size, no measurement protocol, no tree requirement, no diagnostic plan, no software choice.</p>
+    </div>
+  </section>
+
+  <section class="section section--get" aria-labelledby="get-heading">
+    <div class="section-inner">
+      <h2 id="get-heading">Get it</h2>
+      <p class="get-intro">Same protocol, same scope rules, on every platform.</p>
+      <div class="get-grid">
+        <div class="get-card">
+          <span class="tag tag--neutral">Claude Code</span>
+          <p>A plugin skill, invoked in-conversation once installed.</p>
+        </div>
+        <div class="get-card">
+          <span class="tag tag--neutral">ChatGPT</span>
+          <p>A Custom GPT: instructions plus uploaded knowledge files.</p>
+        </div>
+        <div class="get-card">
+          <span class="tag tag--neutral">Gemini</span>
+          <p>A Gem: instructions plus uploaded knowledge files.</p>
+        </div>
+        <div class="get-card">
+          <span class="tag tag--neutral">Gemini CLI</span>
+          <p>An installable extension: <code>gemini extensions install</code>.</p>
+        </div>
+      </div>
+      <p class="get-link"><a href="docs.html">Full install steps and package contents →</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>PhyloCrates v0.6. University of Massachusetts - Boston.</p>
+</footer>
+
+</body>
+</html>

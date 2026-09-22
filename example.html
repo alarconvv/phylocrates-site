@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Worked example: PhyloCrates</title>
+<meta name="description" content="A real, complete PhyloCrates session: from one biological observation about social complexity and brain size, through eight stages, to a finished Hypothesis Reasoning Record.">
+<link rel="icon" type="image/svg+xml" href="assets/owl-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="index.html">
+      <span>PhyloCrates</span>
+    </a>
+    <div class="masthead-tags">
+      <span class="tag tag--neutral">Prototype v0.6</span>
+      <a class="tag tag--icon" href="https://github.com/alarconvv/phylocrates-plugin.git" title="GitHub repository (link coming soon)" aria-label="GitHub repository, link coming soon">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        <span>GitHub</span>
+      </a>
+      <span class="tag tag--neutral tag--wide">Viviana Romero Alarcón</span>
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav" aria-label="Site">
+  <ul>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="example.html" aria-current="page">Example</a></li>
+    <li><a href="docs.html">Docs &amp; install</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+  <section class="section">
+    <div class="section-inner page-intro">
+      <h1>A worked example</h1>
+      <p>This is a real session: an actual run of the shipped skill, not a mockup. One observation goes in; fifteen turns of Socratic refinement later, a complete Hypothesis Reasoning Record comes out. It's reproduced here in full, including the one moment the researcher asks for a method, so you can see the boundary hold in context, not just read about it.</p>
+    </div>
+  </section>
+
+  <section class="section section--seed" aria-labelledby="seed-heading">
+    <div class="section-inner">
+      <h2 id="seed-heading">The starting observation</h2>
+      <p class="seed-quote">"I've noticed that species living in more complex social groups seem to have bigger brains. I think social complexity drives brain size evolution."</p>
+    </div>
+  </section>
+
+  <section class="section section--transcript" aria-labelledby="transcript-heading">
+    <div class="section-inner">
+      <h2 id="transcript-heading">The session</h2>
+      <ol class="transcript">
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>I've noticed that species living in more complex social groups seem to have bigger brains. I think social complexity drives brain size evolution.</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>Before we get into explanations, what's the actual observation this is based on? Is this something you've seen in a specific dataset or clade (e.g., primates, birds, carnivores), or is it a general impression from the literature?</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>Mostly primates, I've read a bunch of papers on primate social groups and neocortex ratio, and it seems like species living in bigger, more complex troops have bigger brains relative to body size.</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>Good, that narrows the problem statement to primates and relative brain size, not absolute. Here's a question before we frame the primary question: when you say "social complexity," are you currently treating that as group size, or something more structural, like the number of distinct social relationships being tracked, coalition/alliance dynamics, or fission-fusion structure? These aren't interchangeable, and the answer changes what the hypothesis is actually claiming.</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>Honestly I've been using group size as a rough proxy, since it's what's usually reported. But I know the "real" theory is about tracking relationships, not just headcount.</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>That's a useful thing to flag now rather than later, group size and relational complexity are conceptually distinct claims, and a hypothesis stated in terms of one isn't automatically supported by evidence about the other. I'll hold that as an open assumption to revisit.</p>
+          <p>Here's the next question: in your current thinking, does social complexity come <em>first</em> and brain size evolves in response to it, or is it possible the relationship runs the other way, where greater cognitive/brain capacity is what allows more complex social groups to form and persist?</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>I mean&hellip; isn't it pretty well established that social complexity comes first? That's the whole social brain hypothesis.</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>It's a named, well-known hypothesis, yes, but naming it doesn't settle the causal direction, and I want to be careful not to let the label do the reasoning for us. The social brain hypothesis as usually stated <em>is</em> a directional claim, but the reverse is also biologically coherent: larger brains/cognitive capacity arising for other reasons could be what <em>permits</em> more complex sociality to evolve afterward, rather than complexity driving the brain. Both are consistent with a raw positive correlation.</p>
+          <p>So: is your intended claim "social complexity &rarr; brain size" specifically, or are you open to it being bidirectional / underdetermined at this stage?</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>I guess I was assuming the direction, but you're right that I can't actually distinguish that from a correlation. Let's say I want to keep the directional claim as my focal hypothesis but treat the reverse as a real alternative.</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>That's a reasonable way to hold it. Let's make that explicit as an assumption rather than a settled fact: the causal arrow runs from social complexity to brain size, not the reverse, status: challenged.</p>
+          <p>One more assumption question, on trait meaning: is "brain size" in your intended claim whole-brain size relative to body size, or a specific structure like neocortex ratio?</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>Let's say neocortex ratio specifically, since that's what most of the social brain literature actually uses.</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>Good, that's now explicit: the claim is about <em>neocortex ratio</em>, not gross brain size. Now, stepping back to alternatives: before I add anything, what other explanations, besides the social-complexity-drives-neocortex story, have you considered or run into, even ones you're skeptical of?</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>Honestly, not many. I've mostly just been reading the social brain hypothesis papers. I guess diet gets mentioned sometimes?</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>Diet is a real one, worth keeping. Let me push on a few more, since a hypothesis set built against only one alternative isn't doing much discriminating work yet:</p>
+          <ul>
+            <li><strong>Ecological/dietary:</strong> extractive foraging or diet quality selects for larger neocortex independent of social structure.</li>
+            <li><strong>Reverse-direction:</strong> larger neocortex arises for other cognitive demands and <em>enables</em> more complex social groups afterward.</li>
+            <li><strong>Common-cause / life-history:</strong> slow life history could independently drive both larger brains and the capacity to sustain complex relationships.</li>
+            <li><strong>Historical/phylogenetic inertia:</strong> the pattern could be concentrated in one or a few ancestral lineages, inherited broadly rather than repeated.</li>
+            <li><strong>Artifact/measurement:</strong> group size and neocortex ratio could both be tracking something else, like body size.</li>
+          </ul>
+          <p>Which of these do you think are actually implausible for primates specifically, versus ones you just hadn't considered yet?</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>The historical one is interesting, I hadn't thought about whether it's really independent origins or just one big radiation event. The artifact one feels like a stretch though. Diet and reverse-direction both feel real to me.</p>
+          <p class="turn-aside"><span class="tag tag--amber">Out of scope</span> Actually, before we go further, should I be running this as a PGLS or do I need a Bayesian comparative method to test this properly?</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>That's a method-selection question, which is outside what I help with, I stay with the biological hypothesis the method would eventually be evaluating, not the method itself.</p>
+          <p>So back to that: you've accepted diet, reverse-direction, and historical/phylogenetic inertia as live alternatives, and you're skeptical of the artifact explanation, I'll mark that as provisionally set aside rather than dropped. With four hypotheses now on the table, what would you expect to actually <em>see</em>, biologically, if the focal hypothesis were true?</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>I'd expect species with bigger, more complex groups to have bigger neocortex ratios, and for that pattern to show up as a significant positive slope in the regression.</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>I want to separate two things there. "A significant positive slope" is a statistical result, not a biological prediction, the hypothesis needs to say what pattern in nature would produce that result. So: what biological pattern would you expect under the focal hypothesis, for example about <em>where in the tree</em> the association shows up?</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>Okay, I guess I'd expect that whenever a primate lineage independently evolves more complex social structure, its neocortex ratio should also increase, even if that happens multiple separate times across different branches. Not just one big jump that everyone downstream inherited.</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>That's a real biological prediction, and a good one. Let's log that as P1. Now, what would you expect under the reverse-direction alternative? Would the <em>same</em> prediction also hold there, or would something differ?</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>Hm. Actually the co-occurrence pattern would look the same either way, wouldn't it? Independent origins of both traits together doesn't tell you which one came first within a lineage.</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>Exactly right, that's an important catch. Recurrent co-occurrence discriminates the focal hypothesis and the reverse-direction hypothesis jointly against the historical alternative, but it does not discriminate them from each other.</p>
+          <p>What about <em>sequence</em>, within a lineage where both traits changed, what would you conceptually expect to change first, structurally, under each direction?</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>I think under my focal hypothesis, social group complexity would have to change first, then neocortex expansion follows as the cognitive demand catches up. Under the reverse, a lineage would need to already have expanded cognitive capacity before it could sustain a more complex social structure.</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>That's a genuine discriminating expectation. I'll record that as discriminating between the focal and reverse-direction hypotheses, the diet and historical hypotheses aren't yet clearly separated from this one, and I want to flag that as unresolved rather than assume it's covered.</p>
+          <p>Let's move to bounding the claim. Is this hypothesis meant to apply across primates broadly, or a narrower group? And is the claim associational, directional, or mechanistic?</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>Primates broadly, I think, that's the scope of the data I've been looking at. And yeah, directional is right, that's basically what I've been trying to say the whole time, I just didn't have the vocabulary for it.</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>That tracks. Two more scope questions: is this claim about extant, present-day species, or does it extend to a historical claim about when in primate evolutionary history this occurred? And is there anything you explicitly do <strong>not</strong> want this hypothesis to claim?</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>Present-day species is the main claim, but I guess it implies something about the process across primate history too. And yes, I don't want to claim this generalizes to non-primate clades, and I don't want to claim neocortex is the only thing that matters.</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>That's a coherent set of boundaries, and it surfaces one more unresolved point worth recording: you've now got a present-day cross-species pattern and an evolutionary-process claim about ordering of change, and those aren't fully separable with what we have. I'll record that as an unresolved ambiguity rather than paper over it.</p>
+          <p>I think we have enough for a coherent, complete hypothesis structure. Do you want me to produce the full Hypothesis Reasoning Record now, or is there anything you want to revisit first?</p>
+        </li>
+        <li class="turn turn--researcher">
+          <span class="turn-role">Researcher</span>
+          <p>No, let's finalize it. Go ahead.</p>
+        </li>
+        <li class="turn turn--agent">
+          <span class="turn-role">PhyloCrates</span>
+          <p>Record produced (below). Before I hand this over: a couple of things stayed genuinely open rather than resolved, the group-size-vs-relational-complexity proxy issue from early on, the diet and historical alternatives aren't yet discriminated from the focal hypothesis the way reverse-direction is, and the present-day-vs-historical-process framing overlap I flagged a moment ago. All three are recorded as unresolved ambiguities rather than quietly settled.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--record" aria-labelledby="record-out-heading">
+    <div class="section-inner">
+      <h2 id="record-out-heading">The finished record</h2>
+      <p class="boundary-intro">A condensed view of the exact YAML this session produced — nothing added, changed, or reworded; some free-text <code>rationale</code> fields and two minor entries are omitted here for length. No method, sample size, tree requirement, or software choice appears anywhere in the full record, including in those omitted fields.</p>
+      <pre class="record-yaml" tabindex="0" role="region" aria-label="Hypothesis Reasoning Record, YAML, scrollable"><code>schema_version: "0.6"
+status: "complete"
+
+motivating_problem:
+  observation: "In primates, species living in larger/more complex social
+    groups appear to have larger neocortex ratio (brain size relative to
+    body size), based on patterns reported across the primate
+    social-brain literature."
+  problem_statement: "It is unclear whether social complexity itself
+    contributes to variation in relative neocortex size across primates,
+    or whether the observed pattern reflects a reverse causal direction,
+    a shared ecological driver, or shared evolutionary history rather
+    than a repeated evolutionary process."
+
+scientific_question:
+  primary: "Is social complexity (initially operationalized loosely as
+    group size, with relational complexity noted as a distinct
+    construct) a plausible driver of variation in relative neocortex
+    size across primates, relative to competing directional, ecological,
+    and historical explanations?"
+  secondary:
+    - "Is the relevant claim about present-day cross-species variation,
+      about the historical/evolutionary process by which the
+      association arose, or both?"
+
+conceptual_question_types:
+  - "cross_taxon_relationship"
+
+assumptions:
+  - id: A1
+    statement: "'Social complexity' can be adequately represented by
+      group size, even though the theoretical construct of interest
+      (relational/coalition structure) is conceptually distinct from
+      headcount."
+    status: "challenged"
+  - id: A2
+    statement: "The causal arrow runs from social complexity to
+      neocortex ratio, rather than the reverse or a bidirectional/
+      common-cause relationship."
+    status: "provisional"
+  - id: A3
+    statement: "'Brain size' in this hypothesis refers specifically to
+      neocortex ratio, not gross relative brain size."
+    status: "accepted"
+  - id: A4
+    statement: "Neocortex ratio and group size are each measuring the
+      intended construct rather than jointly tracking body size or
+      sampling bias."
+    status: "provisional"
+
+hypotheses:
+  - id: H1
+    role: "focal"
+    statement: "Increases in social complexity drive increases in
+      relative neocortex size across primate lineages."
+    explanation_type: "mechanistic"
+  - id: H2
+    role: "alternative"
+    statement: "Relative neocortex size increases for non-social
+      cognitive reasons, and this expanded capacity subsequently
+      permits more complex social structures."
+    explanation_type: "reverse-direction"
+  - id: H3
+    role: "alternative"
+    statement: "Diet and foraging ecology independently drive relative
+      neocortex size; the social-complexity relationship is a
+      byproduct of ecology correlating with both."
+    explanation_type: "common-cause"
+  - id: H4
+    role: "alternative"
+    statement: "The cross-species association is attributable to a
+      small number of ancestral origins rather than a repeated
+      evolutionary process."
+    explanation_type: "historical"
+  - id: H5
+    role: "alternative (provisionally set aside)"
+    statement: "The association is partly an artifact of group size and
+      neocortex ratio both correlating with body size."
+    explanation_type: "artifact"
+
+predictions:
+  - hypothesis_id: H1
+    prediction_id: P1
+    statement: "Wherever a primate lineage independently evolves
+      increased social complexity, an increase in neocortex ratio
+      should recur, not only as a single inherited ancestral event."
+  - hypothesis_id: H1
+    prediction_id: P2
+    statement: "Within a lineage's history, change in social-structural
+      complexity should conceptually precede neocortex expansion."
+  - hypothesis_id: H2
+    prediction_id: P3
+    statement: "Within a lineage's history, neocortex expansion should
+      conceptually precede social-structural change."
+  - hypothesis_id: H4
+    prediction_id: P4
+    statement: "Co-occurrence should be concentrated in one or few
+      lineages tracing to a shared ancestral origin, not recurring
+      independently."
+
+discriminating_expectations:
+  - compares: [H1, H4]
+    status: "discriminating"
+  - compares: [H2, H4]
+    status: "discriminating"
+  - compares: [H1, H2]
+    statement: "Recurrence alone does not distinguish them; sequence of
+      change within a lineage does."
+    status: "discriminating (on sequence, not on recurrence)"
+  - compares: [H1, H3]
+    statement: "Not yet worked out."
+    status: "non-discriminating"
+
+claim_scope:
+  biological_level: "primate species and lineages"
+  temporal_scope: "primarily present-day cross-species variation; the
+    historical-process framing has not been fully reconciled with it"
+  taxonomic_scope: "primates broadly; not extended to non-primate clades"
+  claim_type: "directional"
+  explicit_nonclaims:
+    - "Does not claim this generalizes to non-primate clades."
+    - "Does not claim social complexity is the sole driver of neocortex
+      ratio variation."
+    - "Does not claim group size and relational complexity are
+      equivalent constructs."
+
+unresolved_ambiguities:
+  - "Whether group size adequately proxies relational/coalitionary
+    complexity has not been resolved, only flagged."
+  - "H3 and H4 have not yet been given discriminating expectations
+    against H1; only H2 has a worked discrimination."
+  - "The present-day-pattern and historical-process framings of the
+    claim have not been fully reconciled."
+  - "H5 was provisionally set aside, not formally excluded."
+
+decision_rationale:
+  - decision: "Narrow the trait from 'brain size' to 'neocortex ratio'."
+    source: "user"
+    status: "accepted"
+  - decision: "Treat causal direction as provisional, not established;
+    retain reverse-direction as a formal alternative."
+    source: "source-grounded principle"
+    status: "accepted"
+  - decision: "Declined to address a method-selection question raised
+    mid-session and redirected to the biological hypothesis instead."
+    source: "working assumption"
+    status: "accepted"</code></pre>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="next-heading">
+    <div class="section-inner section-inner--prose">
+      <h2 id="next-heading">Try it yourself</h2>
+      <p>This transcript came from a real run of the shipped skill, produced and independently graded during this project's functional test pass, not written for this page. See <a href="docs.html">Docs &amp; install</a> for how to run PhyloCrates on your own observation.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>PhyloCrates v0.6. University of Massachusetts - Boston.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docs &amp; install: PhyloCrates</title>
+<meta name="description" content="What's inside the PhyloCrates package, and how to install it as a Claude Code plugin, a ChatGPT Custom GPT, a Gemini Gem, or a Gemini CLI extension.">
+<link rel="icon" type="image/svg+xml" href="assets/owl-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="index.html">
+      <span>PhyloCrates</span>
+    </a>
+    <div class="masthead-tags">
+      <span class="tag tag--neutral">Prototype v0.6</span>
+      <a class="tag tag--icon" href="https://github.com/alarconvv/phylocrates-plugin.git" title="GitHub repository (link coming soon)" aria-label="GitHub repository, link coming soon">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        <span>GitHub</span>
+      </a>
+      <span class="tag tag--neutral tag--wide">Viviana Romero Alarcón</span>
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav" aria-label="Site">
+  <ul>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="example.html">Example</a></li>
+    <li><a href="docs.html" aria-current="page">Docs &amp; install</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+  <section class="section">
+    <div class="section-inner page-intro">
+      <h1>Docs &amp; install</h1>
+      <p>PhyloCrates ships as a small, fixed set of Markdown and schema files: one behavior spec, eight reasoning modules, and an output contract. Every platform wrapper below loads the same files, nothing platform-specific changes the protocol or the scope boundary.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="contents-heading">
+    <div class="section-inner">
+      <h2 id="contents-heading">What's in the package</h2>
+      <p class="boundary-intro">The canonical source lives in <code>phylocrates-plugin/skills/phylocrates/</code>. This is what each file is for:</p>
+      <div class="file-tree">SKILL.md                          <span class="path-note"># entry point: purpose, protocol, scope boundary</span>
+PHYLOCRATES_SPEC.md               <span class="path-note"># canonical scientific specification, all 8 stages</span>
+instructions.md                   <span class="path-note"># full behavioral + scope rules for the agent</span>
+knowledge/
+  alternative-explanations.md     <span class="path-note"># building and challenging competing hypotheses</span>
+  assumptions-taxonomy.md         <span class="path-note"># the assumption categories Stage 3 checks</span>
+  hypothesis-quality-checks.md    <span class="path-note"># completion criteria for a refined hypothesis</span>
+  hypothesis-record-template.md   <span class="path-note"># the Stage 8 output template</span>
+  hypothesis-type-router.md       <span class="path-note"># the 6 conceptual question types</span>
+  language-and-causality.md       <span class="path-note"># association vs. mechanism vs. causation</span>
+  prediction-reasoning.md         <span class="path-note"># turning explanations into biological predictions</span>
+  scope-of-claim.md               <span class="path-note"># bounding level, time, taxon, claim type</span>
+output/
+  HYPOTHESIS_RECORD_SCHEMA.md     <span class="path-note"># the record's field-by-field contract</span>
+  hypothesis-record.schema.json   <span class="path-note"># machine-readable version of the same schema</span>
+  example-record.yaml             <span class="path-note"># one worked example record</span>
+sources/
+  source-policy.md                <span class="path-note"># how sources may and may not be used</span>
+  bibliography.md, coverage-audit.md, reasoning-source-map.md</div>
+      <p class="file-tree-note">No file in this package specifies a phylogenetic comparative method, a sample size, or an analysis pipeline, the scope boundary lives in the files themselves, not just in what the agent says.</p>
+    </div>
+  </section>
+
+  <section class="section section--boundary" aria-labelledby="install-heading">
+    <div class="section-inner">
+      <h2 id="install-heading">Install &amp; use</h2>
+      <p class="boundary-intro">Same protocol and scope rules on every platform below; only the packaging differs.</p>
+
+      <div class="install-grid">
+        <div class="install-card">
+          <h3><span class="tag tag--neutral">Claude Code</span></h3>
+          <ol class="install-steps">
+            <li><span>Point Claude Code at the plugin folder:<code class="cmd">claude --plugin-dir ./phylocrates-plugin</code></span></li>
+            <li><span>Claude Code discovers two skills automatically: <code>phylocrates</code> (the agent) and <code>phylocrates-check</code> (a dev-only package linter).</span></li>
+            <li><span>Start a hypothesis-refinement session by describing your observation; the <code>phylocrates</code> skill invokes itself, or ask for it by name.</span></li>
+          </ol>
+        </div>
+
+        <div class="install-card">
+          <h3><span class="tag tag--neutral">ChatGPT</span></h3>
+          <ol class="install-steps">
+            <li><span>ChatGPT → Explore GPTs → Create (or an existing Project's instructions + files).</span></li>
+            <li><span>Paste <code>chatgpt/instructions.md</code> into the Instructions field (7,200 characters, under the 8,000 limit).</span></li>
+            <li><span>Under Knowledge, upload every file in <code>chatgpt/knowledge/</code>, flat, no folders.</span></li>
+            <li><span>Leave Code Interpreter and Browsing off; file search turns on by default once files are attached.</span></li>
+          </ol>
+        </div>
+
+        <div class="install-card">
+          <h3><span class="tag tag--neutral">Gemini</span></h3>
+          <ol class="install-steps">
+            <li><span>Gemini app → Explore Gems → New Gem.</span></li>
+            <li><span>Paste <code>gemini/instructions.md</code> into the Instructions field.</span></li>
+            <li><span>Under Knowledge, add every file in <code>gemini/knowledge/</code>, the same 16 files as the ChatGPT package.</span></li>
+            <li><span>Save. No other tools needed.</span></li>
+          </ol>
+        </div>
+
+        <div class="install-card">
+          <h3><span class="tag tag--neutral">Gemini CLI</span></h3>
+          <ol class="install-steps">
+            <li><span>Install the extension:<code class="cmd">gemini extensions install /path/to/phylocrates-plugin/gemini-cli</code></span></li>
+            <li><span><code>GEMINI.md</code> loads automatically as context whenever the extension is active.</span></li>
+            <li><span>Verify it's there:<code class="cmd">gemini extensions list</code>it should show <code>phylocrates</code>.</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <p class="boundary-footer">Every wrapper is generic on purpose: none of them hardcode a repository URL yet. Point them at wherever this package ends up living.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="use-heading">
+    <div class="section-inner section-inner--prose">
+      <h2 id="use-heading">How a session works</h2>
+      <p>PhyloCrates asks one focused question at a time, in this order: <strong>elicit → challenge → supplement → synthesize</strong>. It does not anchor you to its own preferred explanation before asking for yours. If you already arrive with a precise question, plausible alternatives, and distinct predictions, it compresses the protocol and confirms rather than re-deriving what you've already worked out.</p>
+      <p>A session ends when the hypothesis is explicit and coherent: the problem is clear, the question is precise, assumptions are visible, alternatives are real, predictions follow from each one, at least one expectation discriminates between them (or that failure is acknowledged), the claim is bounded, and unresolved ambiguity is recorded rather than hidden. At that point it produces the <a href="index.html#record-heading">Hypothesis Reasoning Record</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>PhyloCrates v0.6. University of Massachusetts - Boston.</p>
+</footer>
+
+</body>
+</html>
